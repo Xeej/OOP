@@ -1,47 +1,31 @@
-
 import java.math.RoundingMode;
 import java.util.Scanner;
 
-public class Point3d 
+
+public class Point3d extends Point2d
 {
-    /** координата X **/
-    private double xCoord;
-    /**  координатаY **/
-    private double yCoord;
-    /**  координатаZ **/
+
     private double zCoord;
     /** Конструкторинициализации **/
-    public Point3d ( double x,  double y, double z)
-    {xCoord = x;yCoord = y;zCoord = z;}
+    public Point3d ( double x, double y,double z)
+    {super(x,y);zCoord = z;}
     /** Конструкторпоумолчанию. **/
     public Point3d() 
     {
         //Вызовитеконструкторсдвумяпараметрамииопределитеисточник.
         this(0.0, 0.0, 0.0);
     }
-        /** ВозвращениекоординатыX **/
-    public double getX () 
-    {return xCoord;}
-        /** ВозвращениекоординатыY **/
-    public double getY ()
-    {return yCoord;}
     /** ВозвращениекоординатыZ **/
     public double getZ ()
     {return zCoord;}
-    /** УстановказначениякоординатыX. **/
-    public void setX( double val) 
-    {xCoord= val;}
-    /**  УстановказначениякоординатыY. **/
-    public void  setY ( double val) 
-    {yCoord= val;}
     /**  УстановказначениякоординатыZ. **/
     public void  setZ ( double val) 
     {zCoord= val;}
 
     public boolean isEqually (Point3d point2)
     {
-        if (this.getX()==point2.getX()&&this.getY()==this.getY()&&this.getZ()==point2.getZ())
-        return true;
+        if ((this.getX()==point2.getX())&&(this.getY()==point2.getY())&&(this.getZ()==point2.getZ()))
+            return true;
 
         return false;
     }
